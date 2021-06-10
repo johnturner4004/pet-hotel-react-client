@@ -14,14 +14,16 @@ function GetPets() {
 
   const petList = useSelector((store) => store.getPets);
 
-  return (
+  return ( 
+      //
     <>
       <h1>Pet's List</h1>
-      <ul>
+      {JSON.stringify(petList)}
+      {/* <ul>
         {petList.map((pet) => (
           <li key={pet.id}>{pet.name}</li>
         ))}
-      </ul>
+      </ul> */}
     </>
   );
 }
