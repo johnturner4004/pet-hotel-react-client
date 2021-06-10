@@ -1,6 +1,9 @@
 import './App.css';
-import {HashRouter as Router, Route, Link} from 'react-router-dom'
-import Home from './Home/Home'
+import {HashRouter as Router, Route} from 'react-router-dom';
+import Home from './Home/Home';
+import GetPets from './GetPets/GetPets';
+
+
 
 function App() {
   return (
@@ -8,6 +11,10 @@ function App() {
         <Route exact='/' to='home'>
           <Home />
         </Route>
+        <Route exact path='/pet-list'>
+          <GetPets />
+        </Route>
+        
       </Router>
 
     
