@@ -1,21 +1,19 @@
 //react imports
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router';
 
 //import from material UI
-import { Button, MenuItem, TextField, Typography } from '@material-ui/core';
+import { Button, MenuItem, TextField } from '@material-ui/core';
 
 const AddPet = () => {
     const dispatch = useDispatch();
-    const history = useHistory();
     const owners = useSelector(store => store.getOwners);
     const [petName, setPetName] = useState('');
     const [petColor, setPetColor] = useState('');
     const [breed, setBreed] = useState('');
     const [owner, setOwner] = useState('Owner Name');
     
-    const submitForm = () => {
+    const submitForm = (event) => {
         event.preventDefault();
         dispatch({type: 'POST_PET', payload: {pet_name: petName, pet_color: petColor, 
                     breed: breed, owner: owner}});
