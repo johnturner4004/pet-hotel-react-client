@@ -1,7 +1,9 @@
 import './App.css';
-import {HashRouter as Router, Route} from 'react-router-dom'
-import Home from './Home/Home'
-import AddPet from './AddPet/AddPet.jsx';
+import {HashRouter as Router, Route} from 'react-router-dom';
+import Home from './Home/Home';
+import GetPets from './GetPets/GetPets';
+
+
 
 function App() {
   return (
@@ -9,9 +11,10 @@ function App() {
         <Route exact='/' to='home'>
           <Home />
         </Route>
-        <Route exact='/addPet'>
-          <AddPet />
+        <Route exact path='/pet-list'>
+          <GetPets />
         </Route>
+        
       </Router>
 
     
