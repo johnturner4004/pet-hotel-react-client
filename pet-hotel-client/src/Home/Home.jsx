@@ -12,6 +12,9 @@ export default function Home() {
       <Link to="/addOwner">
         <h2>Add Owner</h2>
       </Link>
+      <Link to="/pet-list">
+        <h2>Pet List</h2>
+      </Link>
     </div>
     </>
   )

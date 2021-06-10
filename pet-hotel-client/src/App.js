@@ -8,7 +8,7 @@ import GetPets from './GetPets/GetPets';
 function App() {
   return (
       <Router>
-        <Redirect exact from='/' to='home' />
+        <Redirect exact from='/' to='/home' />
           <Router>
             <Home />
           </Router>
