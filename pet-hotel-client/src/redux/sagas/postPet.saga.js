@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function* postPet (action) {
     try{
-        yield axios.post('http://localhost:5000/api/pets', action.payload);
+        yield axios.post('/api/pets', action.payload);
         yield put({type: 'FETCH_PET'})
     }
     catch(error){
