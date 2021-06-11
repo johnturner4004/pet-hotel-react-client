@@ -7,7 +7,8 @@ import { Button, MenuItem, TextField } from '@material-ui/core';
 
 const AddPet = () => {
     const dispatch = useDispatch();
-    const owners = useSelector(store => store.getOwners);
+    const owners = useSelector(store => store.ownerListReducer);
+
     const [petName, setPetName] = useState('');
     const [petColor, setPetColor] = useState('');
     const [breed, setBreed] = useState('');
@@ -28,8 +29,8 @@ const AddPet = () => {
     };
 
     useEffect(() => {
-
-    });
+        dispatch({ type: 'FETCH_OWNER_LIST' })
+    }, []);
 
     return(
         <div>
