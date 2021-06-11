@@ -9,6 +9,7 @@ import {
   Table, 
   TableBody
 } from '@material-ui/core';
+import AddPet from '../AddPet/AddPet.jsx';
 
 function GetPets() {
   const dispatch = useDispatch();
@@ -27,11 +28,7 @@ function GetPets() {
       //
     <>
       <h1>Pet's List</h1>
-      {/* <ul>
-        {petList.map(pet => (
-          <li key={pet.id}>{pet.name}</li>
-        ))}
-      </ul> */}
+      <AddPet />
       <Paper>
         <TableContainer>
           <Table stickyHeader>
