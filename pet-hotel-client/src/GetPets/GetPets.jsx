@@ -11,7 +11,7 @@ function GetPets() {
 
   useEffect(() => {
     getPetList();
-  });
+  }, []);
 
   const petList = useSelector((store) => store.getPets);
 
