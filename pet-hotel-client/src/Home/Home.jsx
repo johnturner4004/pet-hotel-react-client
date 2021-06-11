@@ -9,7 +9,7 @@ export default function Home() {
       <Link to="/pet-list">
         <h2>View Pets</h2>
       </Link>
-      <Link to="/addOwner">
+      <Link to="/owners">
         <h2>Manage Owner</h2>
       </Link>
       <Link to="/pet-list">
