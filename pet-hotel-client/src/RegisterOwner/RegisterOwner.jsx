@@ -3,12 +3,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 //import axios from 'axios';
 
-function registerOwner() {
+
+
+function RegisterOwner() {
+
+    const dispatch = useDispatch();
 
     //GETs list of owners to display on DOM on page load
     useEffect(() => {
         dispatch({type: 'FETCH_OWNER_LIST'});
-    }, []);
+    }, [dispatch]);
 
     //ownerList store instance holds a list of all owners
     const ownerList = useSelector((store) => store.ownerList);
@@ -16,8 +20,6 @@ function registerOwner() {
     //sets local state for owner object to POST to saga/sever/DB
     const [ownerName, setOwnerName] = useState('');
     const [numberOfPets, setNumberOfPets] = useState('');
-
-    const dispatch = useDispatch();
 
     //creates new owner object and dispatches that payload to ownerList saga
     const addNewOwner = () => {
@@ -49,17 +51,21 @@ function registerOwner() {
         history.push('/owners');
     }//end goBack
 
+    const deleteOwner = () => {
+
+    }
+
     return(
         <div>
             <div className="header">
-                <H2>Pet Hotel</H2>
+                <h2>Pet Hotel</h2>
             </div>
             <div className="nav-bar">
                 <button onClick={routeToDashboard}>Dashboard</button>
                 <button onClick={routeToOwners}>Manage Owners</button>
             </div>
             <div className="input">
-                <H3>Add Owner</H3>
+                <h3>Add Owner</h3>
                 <br/>
                 <form className="input-form" onSubmit={addNewOwner}>
                     <input className="owner-name" 
@@ -76,7 +82,7 @@ function registerOwner() {
                 </form>
             </div>
             <div className="owner-table">
-                <H3>Owners</H3>
+                <h3>Owners</h3>
                 <table>
                     <thead>
                         <tr>
@@ -89,7 +95,7 @@ function registerOwner() {
                         {ownerList.map((item, i) =>
                             <tr key={i}>
                                 <td>{item.name}</td>
-                                <td>{item.number-of-pets}</td>
+                                <td>{item.numberOfPets}</td>
                                 <td><button className="delete-btn" onClick={() => deleteOwner(item.id)}>Delete</button></td>
                                 <td colspan="3"></td>
                             </tr>
@@ -101,4 +107,4 @@ function registerOwner() {
     )
 }
 
-export default registerOwner;
+export default RegisterOwner;
