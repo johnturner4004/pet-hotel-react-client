@@ -41,7 +41,7 @@ function registerOwner() {
 
     //TODO - Double check routes
     const routeToDashboard = () => {
-        history.push('/dashboard');
+        history.push('/pet-list');
     }//end goBack
 
     //TODO - Double check routes
